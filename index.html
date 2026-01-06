@@ -3,24 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>市原重機 2025年 忘年会</title>
+  <title>株式会社市原重機建設 2025年 忘年会</title>
   <style>
     body {
-      background-color: #9acd32; /* 黄緑色 */
-      font-family: sans-serif;
+      /* 背景を少し薄い黄緑色（PaleGreen）に変更 */
+      background-color: #f0fff0; 
+      background-image: radial-gradient(#dcfad4 1px, transparent 1px);
+      background-size: 20px 20px; /* 隠し味にドット模様で手作り感 */
+      font-family: "Hiragino Maru Gothic ProN", "Yu Gothic", "Meiryo", sans-serif;
       margin: 0;
       padding: 40px 10px;
       text-align: center;
     }
 
     h1 {
-      font-size: 2.5rem;
+      /* 文字を丸ゴシック系に、サイズを調整 */
+      font-family: "Hiragino Maru Gothic ProN", "Rounded Mplus 1c", sans-serif;
+      font-size: 2.2rem;
       color: white;
-      /* 赤い縁取りを細くスッキリ修正 */
+      /* 赤い縁取りを細くスッキリ */
       text-shadow: 
         1.5px 1.5px 0 #ff0000, -1.5px -1.5px 0 #ff0000,
         1.5px -1.5px 0 #ff0000, -1.5px 1.5px 0 #ff0000;
       margin-bottom: 40px;
+      font-weight: bold;
     }
 
     #gallery {
@@ -35,16 +41,18 @@
     .photo-frame {
       background: white;
       padding: 10px 10px 25px 10px;
-      box-shadow: 3px 5px 10px rgba(0,0,0,0.2);
+      box-shadow: 3px 5px 10px rgba(0,0,0,0.15);
       cursor: pointer;
-      /* 最初から少しだけ傾けておく（JSが万が一動かなくても傾くように） */
-      transform: rotate(-2deg);
+      transform: rotate(-2.5deg); /* 初期傾き */
       transition: transform 0.2s;
     }
 
-    /* 2枚に1枚は逆方向に傾ける */
+    /* 交互に傾きの向きを変える */
     .photo-frame:nth-child(even) {
-      transform: rotate(3deg);
+      transform: rotate(3.5deg);
+    }
+    .photo-frame:nth-child(3n) {
+      transform: rotate(-1.5deg);
     }
 
     .photo-frame img {
@@ -57,11 +65,12 @@
     .photo-frame:hover {
       transform: scale(1.1) rotate(0deg) !important;
       z-index: 10;
+      box-shadow: 5px 10px 20px rgba(0,0,0,0.2);
     }
 
     /* 拡大画面 */
     #overlay {
-      display: none; /* 最初は隠す */
+      display: none;
       position: fixed;
       top: 0; left: 0; width: 100%; height: 100%;
       background: rgba(0,0,0,0.9);
@@ -73,8 +82,9 @@
 
     #overlay img {
       max-width: 90%;
-      max-height: 70%;
+      max-height: 75%;
       border: 5px solid white;
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
     }
 
     .nav-btn {
@@ -82,13 +92,19 @@
       top: 50%;
       transform: translateY(-50%);
       color: white;
-      background: rgba(255,255,255,0.2);
-      border: none;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.3);
       font-size: 40px;
-      padding: 10px 20px;
+      padding: 15px;
       cursor: pointer;
-      border-radius: 5px;
+      border-radius: 50%;
+      width: 70px;
+      height: 70px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
+    .nav-btn:hover { background: rgba(255,255,255,0.3); }
     #prev-btn { left: 20px; }
     #next-btn { right: 20px; }
     
@@ -98,15 +114,17 @@
       right: 20px;
       background: white;
       border: none;
-      padding: 10px 20px;
+      padding: 10px 25px;
       cursor: pointer;
       font-weight: bold;
+      border-radius: 20px;
+      font-size: 1rem;
     }
   </style>
 </head>
 <body>
 
-<h1>市原重機 2025年 忘年会</h1>
+<h1>株式会社市原重機建設　2025年　忘年会</h1>
 
 <div id="gallery">
   <div class="photo-frame"><img src="images/DSC_0016.jpg"></div>
@@ -224,7 +242,7 @@
   const images = Array.from(document.querySelectorAll('.photo-frame img')).map(img => img.src);
   let currentIndex = 0;
 
-  // 1. 拡大表示機能
+  // 拡大
   frames.forEach((frame, index) => {
     frame.addEventListener('click', () => {
       currentIndex = index;
@@ -237,25 +255,26 @@
     overlay.style.display = 'flex';
   }
 
-  // 2. 閉じる機能
+  // 閉じる
   document.getElementById('close-btn').addEventListener('click', () => {
     overlay.style.display = 'none';
   });
 
-  // 3. 次へ・前へ機能
+  // 次へ
   document.getElementById('next-btn').addEventListener('click', (e) => {
     e.stopPropagation();
     currentIndex = (currentIndex + 1) % images.length;
     overlayImg.src = images[currentIndex];
   });
 
+  // 前へ
   document.getElementById('prev-btn').addEventListener('click', (e) => {
     e.stopPropagation();
     currentIndex = (currentIndex - 1 + images.length) % images.length;
     overlayImg.src = images[currentIndex];
   });
 
-  // オーバーレイ背景クリックでも閉じる
+  // 背景クリックで閉じる
   overlay.addEventListener('click', (e) => {
     if (e.target === overlay) overlay.style.display = 'none';
   });
