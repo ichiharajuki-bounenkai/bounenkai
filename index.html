@@ -4,45 +4,65 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex, nofollow">
-  <title>忘年会アルバム</title>
+  <title>忘年会アルバム 2024</title>
   <style>
+    /* 背景をコルクボードやクラフト紙風に */
     body {
-      font-family: "Helvetica Neue", Arial, sans-serif;
-      background-color: #f8f9fa;
+      background-color: #eaddca; 
+      background-image: url('https://www.transparenttextures.com/patterns/pinstriped-suit.png'); /* 質感追加 */
+      font-family: "Hiragino Maru Gothic ProN", "Meiryo", sans-serif;
       margin: 0;
-      padding: 20px;
-      text-align: center;
+      padding: 40px 20px;
     }
-    h1 { color: #333; margin-bottom: 30px; }
 
-    /* ギャラリーのレイアウト */
+    h1 {
+      text-align: center;
+      color: #5d4037;
+      font-size: 2rem;
+      border-bottom: 2px dashed #5d4037;
+      display: inline-block;
+      width: 100%;
+      padding-bottom: 10px;
+      margin-bottom: 50px;
+    }
+
     #gallery {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* 自動で並べる */
-      gap: 10px;
-      max-width: 1000px;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
       margin: 0 auto;
+      padding: 20px;
     }
 
-    #gallery img {
+    /* ポラロイド風のデザイン */
+    .photo-frame {
+      background: white;
+      padding: 10px 10px 30px 10px; /* 下側を広くして余白を作る */
+      box-shadow: 3px 5px 15px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+      cursor: pointer;
+      display: inline-block;
+    }
+
+    .photo-frame img {
       width: 100%;
       height: 150px;
-      object-fit: cover; /* 写真を枠いっぱいにトリミングして揃える */
-      border-radius: 4px;
-      cursor: pointer;
-      transition: transform 0.2s;
+      object-fit: cover;
+      display: block;
     }
 
-    #gallery img:hover {
-      transform: scale(1.05); /* ホバーで少し大きく */
+    .photo-frame:hover {
+      transform: scale(1.1) rotate(0deg) !important; /* ホバーで真っ直ぐ拡大 */
+      z-index: 10;
     }
 
-    /* 拡大画面（ライトボックス）のスタイル */
+    /* 拡大用（ライトボックス） */
     #overlay {
       display: none;
       position: fixed;
       top: 0; left: 0; width: 100%; height: 100%;
-      background: rgba(0,0,0,0.8);
+      background: rgba(0,0,0,0.9);
       justify-content: center;
       align-items: center;
       z-index: 1000;
@@ -50,18 +70,20 @@
     #overlay img {
       max-width: 90%;
       max-height: 90%;
-      border: 3px solid white;
+      border: 5px solid white;
     }
   </style>
 </head>
 <body>
 
-<h1>忘年会アルバム</h1>
+<h1>📷 忘年会アルバム</h1>
 
 <div id="gallery">
-  <img src="images/DSC_0046.jpg">
-  <img src="images/DSC_0045.jpg">
-  <img src="images/DSC_0047.jpg">
+  <div class="photo-frame"><img src="images/DSC_0016.jpg"></div>
+  <div class="photo-frame"><img src="images/DSC_0018.jpg"></div>
+  <div class="photo-frame"><img src="images/DSC_0019.jpg"></div>
+  <div class="photo-frame"><img src="images/DSC_0020.jpg"></div>
+  <div class="photo-frame"><img src="images/DSC_0343.jpg"></div>
 </div>
 
 <div id="overlay" onclick="this.style.display='none'">
@@ -69,21 +91,20 @@
 </div>
 
 <script>
-  const gallery = document.getElementById("gallery");
-  const images = Array.from(gallery.getElementsByTagName("img"));
+  // 写真をランダムに少しだけ傾ける
+  const frames = document.querySelectorAll('.photo-frame');
+  frames.forEach(frame => {
+    const randomRotate = Math.floor(Math.random() * 10) - 5; // -5度〜5度の間で回転
+    frame.style.transform = `rotate(${randomRotate}deg)`;
+  });
 
-  // シャッフル機能（そのまま維持）
-  images
-    .sort(() => Math.random() - 0.5)
-    .forEach(img => gallery.appendChild(img));
-
-  // クリックで拡大する機能
+  // 拡大処理
   const overlay = document.getElementById("overlay");
   const overlayImg = document.getElementById("overlay-img");
-
-  gallery.addEventListener("click", (e) => {
-    if (e.target.tagName === "IMG") {
-      overlayImg.src = e.target.src;
+  document.getElementById("gallery").addEventListener("click", (e) => {
+    const img = e.target.closest('img');
+    if (img) {
+      overlayImg.src = img.src;
       overlay.style.display = "flex";
     }
   });
