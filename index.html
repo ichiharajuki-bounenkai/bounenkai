@@ -3,34 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="robots" content="noindex, nofollow">
-  <title>市原重機 2025年 忘年会アルバム</title>
+  <title>市原重機 2025年 忘年会</title>
   <style>
     body {
-      background-color: #9acd32; /* 黄緑色 (YellowGreen) */
-      font-family: "Helvetica Neue", Arial, "Hiragino Sans", "Meiryo", sans-serif;
+      background-color: #9acd32; /* 黄緑色 */
+      font-family: sans-serif;
       margin: 0;
       padding: 40px 10px;
       text-align: center;
     }
 
     h1 {
-      font-size: 3rem; /* 大きく */
-      color: white; /* 白文字 */
-      /* 赤色の縁取り */
+      font-size: 2.5rem;
+      color: white;
+      /* 赤い縁取りを細くスッキリ修正 */
       text-shadow: 
-        3px 3px 0 #ff0000, -3px -3px 0 #ff0000,
-        3px -3px 0 #ff0000, -3px 3px 0 #ff0000,
-        3px 0px 0 #ff0000, -3px 0px 0 #ff0000,
-        0px 3px 0 #ff0000, 0px -3px 0 #ff0000;
-      margin-bottom: 50px;
-      letter-spacing: 2px;
+        1.5px 1.5px 0 #ff0000, -1.5px -1.5px 0 #ff0000,
+        1.5px -1.5px 0 #ff0000, -1.5px 1.5px 0 #ff0000;
+      margin-bottom: 40px;
     }
 
     #gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-      gap: 30px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
       max-width: 1200px;
       margin: 0 auto;
     }
@@ -38,15 +35,21 @@
     .photo-frame {
       background: white;
       padding: 10px 10px 25px 10px;
-      box-shadow: 5px 8px 15px rgba(0,0,0,0.2);
-      transition: transform 0.3s ease;
+      box-shadow: 3px 5px 10px rgba(0,0,0,0.2);
       cursor: pointer;
-      display: inline-block;
+      /* 最初から少しだけ傾けておく（JSが万が一動かなくても傾くように） */
+      transform: rotate(-2deg);
+      transition: transform 0.2s;
+    }
+
+    /* 2枚に1枚は逆方向に傾ける */
+    .photo-frame:nth-child(even) {
+      transform: rotate(3deg);
     }
 
     .photo-frame img {
-      width: 100%;
-      height: 150px;
+      width: 180px;
+      height: 140px;
       object-fit: cover;
       display: block;
     }
@@ -56,39 +59,49 @@
       z-index: 10;
     }
 
-    /* 拡大オーバーレイ */
+    /* 拡大画面 */
     #overlay {
-      display: none;
+      display: none; /* 最初は隠す */
       position: fixed;
       top: 0; left: 0; width: 100%; height: 100%;
-      background: rgba(0,0,0,0.95);
+      background: rgba(0,0,0,0.9);
       justify-content: center;
       align-items: center;
-      z-index: 1000;
+      flex-direction: column;
+      z-index: 9999;
     }
+
     #overlay img {
       max-width: 90%;
-      max-height: 80%;
+      max-height: 70%;
       border: 5px solid white;
     }
 
-    /* 矢印ボタン */
     .nav-btn {
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
       color: white;
-      font-size: 50px;
-      background: none;
+      background: rgba(255,255,255,0.2);
       border: none;
+      font-size: 40px;
+      padding: 10px 20px;
       cursor: pointer;
-      padding: 20px;
-      user-select: none;
+      border-radius: 5px;
     }
-    .nav-btn:hover { color: #9acd32; }
-    #prev-btn { left: 10px; }
-    #next-btn { right: 10px; }
-    #close-btn { position: absolute; top: 20px; right: 20px; font-size: 30px; color: white; cursor: pointer; }
+    #prev-btn { left: 20px; }
+    #next-btn { right: 20px; }
+    
+    #close-btn {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: white;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      font-weight: bold;
+    }
   </style>
 </head>
 <body>
@@ -96,25 +109,157 @@
 <h1>市原重機 2025年 忘年会</h1>
 
 <div id="gallery">
-<div class="photo-frame"><img src="images/DSC_0016.jpg"></div>
-<div class="photo-frame"><img src="images/DSC_0018.jpg"></div>
-<div class="photo-frame"><img src="images/DSC_0019.jpg"></div>
-<div class="photo-frame"><img src="images/DSC_0020.jpg"></div>
-<div class="photo-frame"><img src="images/DSC_0022.jpg"></div>
-<div class="photo-frame"><img src="images/DSC_0023.jpg"></div>
-<div class="photo-frame"><img src="images/DSC_0025.jpg"></div>
-<div class="photo-frame"><img src="images/DSC_0035.jpg"></div>
-<div class="photo-frame"><img src="images/DSC_0036.jpg"></div>
-<div class="photo-frame"><img src="images/DSC_0037.jpg"></div>
-<div class="photo-frame"><img src="images/DSC_0038.jpg"></div>
-<div class="photo-frame"><img src="images/DSC_0039.jpg"></div>
-<div class="photo-frame"><img src="images/DSC_0042.jpg"></div>
-<div class="photo-frame"><img src="images/DSC_0043.jpg"></div>
-<div class="photo-frame"><img src="images/DSC_0045.jpg"></div>
-<div class="photo-frame"><img src="images/DSC_0046.jpg"></div>
-<div class="photo-frame"><img src="images/DSC_0047.jpg"></div>
-<div class="photo-frame"><img src="images/DSC_0051.jpg"></div>
-<div class="photo-frame"><img src="images/DSC_0052.jpg"></div>
-<div class="photo-frame"><img src="images/DSC_0053.jpg"></div>
-<div class="photo-frame"><img src="images/DSC_0054.jpg"></div>
-<div class="photo-frame"><img src="images/DSC_0057.jpg">
+  <div class="photo-frame"><img src="images/DSC_0016.jpg"></div>
+  <div class="photo-frame"><img src="images/DSC_0018.jpg"></div>
+  <div class="photo-frame"><img src="images/DSC_0019.jpg"></div>
+  <div class="photo-frame"><img src="images/DSC_0020.jpg"></div>
+  <div class="photo-frame"><img src="images/DSC_0022.jpg"></div>
+  <div class="photo-frame"><img src="images/DSC_0023.jpg"></div>
+  <div class="photo-frame"><img src="images/DSC_0025.jpg"></div>
+  <div class="photo-frame"><img src="images/DSC_0035.jpg"></div>
+  <div class="photo-frame"><img src="images/DSC_0036.jpg"></div>
+  <div class="photo-frame"><img src="images/DSC_0037.jpg"></div>
+  <div class="photo-frame"><img src="images/DSC_0038.jpg"></div>
+  <div class="photo-frame"><img src="images/DSC_0039.jpg"></div>
+  <div class="photo-frame"><img src="images/DSC_0042.jpg"></div>
+  <div class="photo-frame"><img src="images/DSC_0043.jpg"></div>
+  <div class="photo-frame"><img src="images/DSC_0045.jpg"></div>
+  <div class="photo-frame"><img src="images/DSC_0046.jpg"></div>
+  <div class="photo-frame"><img src="images/DSC_0047.jpg"></div>
+  <div class="photo-frame"><img src="images/DSC_0051.jpg"></div>
+  <div class="photo-frame"><img src="images/DSC_0052.jpg"></div>
+  <div class="photo-frame"><img src="images/DSC_0053.jpg"></div>
+  <div class="photo-frame"><img src="images/DSC_0054.jpg"></div>
+  <div class="photo-frame"><img src="images/DSC_0057.jpg"></div>
+  <div class="photo-frame"><img src="images/DSC_0059.jpg"></div>
+  <div class="photo-frame"><img src="images/DSC_0060.jpg"></div>
+  <div class="photo-frame"><img src="images/DSC_0066.jpg"></div>
+  <div class="photo-frame"><img src="images/DSC_0073.jpg"></div>
+  <div class="photo-frame"><img src="images/DSC_0078.jpg"></div>
+  <div class="photo-frame"><img src="images/DSC_0080.jpg"></div>
+  <div class="photo-frame"><img src="images/DSC_0081.jpg"></div>
+  <div class="photo-frame"><img src="images/DSC_0085.jpg"></div>
+  <div class="photo-frame"><img src="images/DSC_0086.jpg"></div>
+  <div class="photo-frame"><img src="images/DSC_0087.jpg"></div>
+  <div class="photo-frame"><img src="images/DSC_0091.jpg"></div>
+  <div class="photo-frame"><img src="images/DSC_0092.jpg"></div>
+  <div class="photo-frame"><img src="images/DSC_0093.jpg"></div>
+  <div class="photo-frame"><img src="images/DSC_0096.jpg"></div>
+  <div class="photo-frame"><img src="images/DSC_0100.jpg"></div>
+  <div class="photo-frame"><img src="images/DSC_0103.jpg"></div>
+  <div class="photo-frame"><img src="images/DSC_0109.jpg"></div>
+  <div class="photo-frame"><img src="images/DSC_0111.jpg"></div>
+  <div class="photo-frame"><img src="images/DSC_0113.jpg"></div>
+  <div class="photo-frame"><img src="images/DSC_0117.jpg"></div>
+  <div class="photo-frame"><img src="images/DSC_0119.jpg"></div>
+  <div class="photo-frame"><img src="images/DSC_0122.jpg"></div>
+  <div class="photo-frame"><img src="images/DSC_0129.jpg"></div>
+  <div class="photo-frame"><img src="images/DSC_0131.jpg"></div>
+  <div class="photo-frame"><img src="images/DSC_0132.jpg"></div>
+  <div class="photo-frame"><img src="images/DSC_0133.jpg"></div>
+  <div class="photo-frame"><img src="images/DSC_0145.jpg"></div>
+  <div class="photo-frame"><img src="images/DSC_0151.jpg"></div>
+  <div class="photo-frame"><img src="images/DSC_0153.jpg"></div>
+  <div class="photo-frame"><img src="images/DSC_0160.jpg"></div>
+  <div class="photo-frame"><img src="images/DSC_0162.jpg"></div>
+  <div class="photo-frame"><img src="images/DSC_0163.jpg"></div>
+  <div class="photo-frame"><img src="images/DSC_0169.jpg"></div>
+  <div class="photo-frame"><img src="images/DSC_0170.jpg"></div>
+  <div class="photo-frame"><img src="images/DSC_0177.jpg"></div>
+  <div class="photo-frame"><img src="images/DSC_0178.jpg"></div>
+  <div class="photo-frame"><img src="images/DSC_0179.jpg"></div>
+  <div class="photo-frame"><img src="images/DSC_0186.jpg"></div>
+  <div class="photo-frame"><img src="images/DSC_0187.jpg"></div>
+  <div class="photo-frame"><img src="images/DSC_0188.jpg"></div>
+  <div class="photo-frame"><img src="images/DSC_0189.jpg"></div>
+  <div class="photo-frame"><img src="images/DSC_0191.jpg"></div>
+  <div class="photo-frame"><img src="images/DSC_0192.jpg"></div>
+  <div class="photo-frame"><img src="images/DSC_0198.jpg"></div>
+  <div class="photo-frame"><img src="images/DSC_0202.jpg"></div>
+  <div class="photo-frame"><img src="images/DSC_0213.jpg"></div>
+  <div class="photo-frame"><img src="images/DSC_0214.jpg"></div>
+  <div class="photo-frame"><img src="images/DSC_0215.jpg"></div>
+  <div class="photo-frame"><img src="images/DSC_0219.jpg"></div>
+  <div class="photo-frame"><img src="images/DSC_0222.jpg"></div>
+  <div class="photo-frame"><img src="images/DSC_0232.jpg"></div>
+  <div class="photo-frame"><img src="images/DSC_0234.jpg"></div>
+  <div class="photo-frame"><img src="images/DSC_0238.jpg"></div>
+  <div class="photo-frame"><img src="images/DSC_0240.jpg"></div>
+  <div class="photo-frame"><img src="images/DSC_0243.jpg"></div>
+  <div class="photo-frame"><img src="images/DSC_0244.jpg"></div>
+  <div class="photo-frame"><img src="images/DSC_0251.jpg"></div>
+  <div class="photo-frame"><img src="images/DSC_0257.jpg"></div>
+  <div class="photo-frame"><img src="images/DSC_0264.jpg"></div>
+  <div class="photo-frame"><img src="images/DSC_0268.jpg"></div>
+  <div class="photo-frame"><img src="images/DSC_0277.jpg"></div>
+  <div class="photo-frame"><img src="images/DSC_0279.jpg"></div>
+  <div class="photo-frame"><img src="images/DSC_0280.jpg"></div>
+  <div class="photo-frame"><img src="images/DSC_0282.jpg"></div>
+  <div class="photo-frame"><img src="images/DSC_0287.jpg"></div>
+  <div class="photo-frame"><img src="images/DSC_0289.jpg"></div>
+  <div class="photo-frame"><img src="images/DSC_0290.jpg"></div>
+  <div class="photo-frame"><img src="images/DSC_0300.jpg"></div>
+  <div class="photo-frame"><img src="images/DSC_0306.jpg"></div>
+  <div class="photo-frame"><img src="images/DSC_0312.jpg"></div>
+  <div class="photo-frame"><img src="images/DSC_0314.jpg"></div>
+  <div class="photo-frame"><img src="images/DSC_0326.jpg"></div>
+  <div class="photo-frame"><img src="images/DSC_0331.jpg"></div>
+  <div class="photo-frame"><img src="images/DSC_0334.jpg"></div>
+  <div class="photo-frame"><img src="images/DSC_0341.jpg"></div>
+  <div class="photo-frame"><img src="images/DSC_0342.jpg"></div>
+  <div class="photo-frame"><img src="images/DSC_0343.jpg"></div>
+</div>
+
+<div id="overlay">
+  <button id="close-btn">× 閉じる</button>
+  <button id="prev-btn" class="nav-btn">◀</button>
+  <img id="overlay-img" src="">
+  <button id="next-btn" class="nav-btn">▶</button>
+</div>
+
+<script>
+  const frames = document.querySelectorAll('.photo-frame');
+  const overlay = document.getElementById('overlay');
+  const overlayImg = document.getElementById('overlay-img');
+  const images = Array.from(document.querySelectorAll('.photo-frame img')).map(img => img.src);
+  let currentIndex = 0;
+
+  // 1. 拡大表示機能
+  frames.forEach((frame, index) => {
+    frame.addEventListener('click', () => {
+      currentIndex = index;
+      openImage(currentIndex);
+    });
+  });
+
+  function openImage(index) {
+    overlayImg.src = images[index];
+    overlay.style.display = 'flex';
+  }
+
+  // 2. 閉じる機能
+  document.getElementById('close-btn').addEventListener('click', () => {
+    overlay.style.display = 'none';
+  });
+
+  // 3. 次へ・前へ機能
+  document.getElementById('next-btn').addEventListener('click', (e) => {
+    e.stopPropagation();
+    currentIndex = (currentIndex + 1) % images.length;
+    overlayImg.src = images[currentIndex];
+  });
+
+  document.getElementById('prev-btn').addEventListener('click', (e) => {
+    e.stopPropagation();
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    overlayImg.src = images[currentIndex];
+  });
+
+  // オーバーレイ背景クリックでも閉じる
+  overlay.addEventListener('click', (e) => {
+    if (e.target === overlay) overlay.style.display = 'none';
+  });
+</script>
+
+</body>
+</html>
