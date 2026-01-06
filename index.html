@@ -13,26 +13,9 @@
       padding: 20px 10px;
       text-align: center;
     }
-
-    .title-container {
-      margin-bottom: 30px;
-      padding: 0 10px;
-    }
-    .title-logo {
-      max-width: 100%;
-      width: 750px;
-      height: auto;
-    }
-
-    #gallery {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-      max-width: 1300px;
-      margin: 0 auto;
-    }
-
+    .title-container { margin-bottom: 30px; padding: 0 10px; }
+    .title-logo { max-width: 100%; width: 750px; height: auto; }
+    #gallery { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; max-width: 1300px; margin: 0 auto; }
     .photo-frame {
       background: white;
       padding: 10px 10px 35px 10px;
@@ -41,79 +24,31 @@
       transition: transform 0.2s;
       position: relative;
     }
-
     .photo-frame p {
-      margin: 0;
-      font-size: 0.85rem;
-      color: #333;
-      font-weight: bold;
-      position: absolute;
-      bottom: 10px;
-      left: 0;
-      right: 0;
-      text-align: center;
+      margin: 0; font-size: 0.85rem; color: #333; font-weight: bold;
+      position: absolute; bottom: 10px; left: 0; right: 0; text-align: center;
     }
-
-    .photo-frame img {
-      width: 180px;
-      height: 140px;
-      object-fit: cover;
-      display: block;
-    }
-
-    /* 拡大画面 */
+    .photo-frame img { width: 180px; height: 140px; object-fit: cover; display: block; }
     #overlay {
-      display: none;
-      position: fixed;
-      top: 0; left: 0; width: 100%; height: 100%;
-      background: rgba(0,0,0,0.92);
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      z-index: 9999;
+      display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.92); justify-content: center; align-items: center;
+      flex-direction: column; z-index: 9999;
     }
-
-    #overlay-container {
-      background: white;
-      padding: 10px 10px 50px 10px;
-      position: relative;
-    }
-
-    #overlay img {
-      max-width: 85vw;
-      max-height: 70vh;
-      display: block;
-    }
-
-    #overlay-caption {
-      margin-top: 15px;
-      font-size: 1.2rem;
-      color: #333;
-      font-weight: bold;
-    }
-
+    #overlay-container { background: white; padding: 10px 10px 50px 10px; position: relative; }
+    #overlay img { max-width: 85vw; max-height: 70vh; display: block; }
+    #overlay-caption { margin-top: 15px; font-size: 1.2rem; color: #333; font-weight: bold; }
     .nav-btn {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      color: white;
-      background: rgba(255,255,255,0.2);
-      border: 1px solid white;
-      font-size: 30px;
-      width: 50px;
-      height: 50px;
-      cursor: pointer;
-      border-radius: 50%;
+      position: absolute; top: 50%; transform: translateY(-50%); color: white;
+      background: rgba(255,255,255,0.2); border: 1px solid white; font-size: 30px;
+      width: 50px; height: 50px; cursor: pointer; border-radius: 50%;
     }
     #prev-btn { left: -70px; }
     #next-btn { right: -70px; }
     #close-btn { position: absolute; top: -50px; right: 0; background: white; border: none; padding: 5px 15px; cursor: pointer; border-radius: 20px; }
-
     @media (max-width: 768px) {
       #prev-btn { left: 10px; top: auto; bottom: -60px; }
       #next-btn { right: 10px; top: auto; bottom: -60px; }
     }
-
     .photo-frame:nth-child(odd) { transform: rotate(-2deg); }
     .photo-frame:nth-child(even) { transform: rotate(2deg); }
     .photo-frame:hover { transform: scale(1.1) rotate(0deg) !important; z-index: 10; }
@@ -130,10 +65,6 @@
   <div class="photo-frame"><img src="images/DSC_0018.jpg"><p>挨拶</p></div>
   <div class="photo-frame"><img src="images/DSC_0019.jpg"><p>挨拶</p></div>
   <div class="photo-frame"><img src="images/DSC_0020.jpg"><p>挨拶</p></div>
-  <div class="photo-frame"><img src="images/DSC_0326.jpg"><p>挨拶</p></div>
-  <div class="photo-frame"><img src="images/DSC_0331.jpg"><p>挨拶</p></div>
-  <div class="photo-frame"><img src="images/DSC_0334.jpg"><p>挨拶</p></div>
-
   <div class="photo-frame"><img src="images/DSC_0022.jpg"><p>歓談</p></div>
   <div class="photo-frame"><img src="images/DSC_0023.jpg"><p>歓談</p></div>
   <div class="photo-frame"><img src="images/DSC_0025.jpg"><p>歓談</p></div>
@@ -159,6 +90,8 @@
   <div class="photo-frame"><img src="images/DSC_0078.jpg"><p>歓談</p></div>
   <div class="photo-frame"><img src="images/DSC_0080.jpg"><p>歓談</p></div>
   <div class="photo-frame"><img src="images/DSC_0081.jpg"><p>歓談</p></div>
+  <div class="photo-frame"><img src="images/DSC_0085.jpg"><p>くじ引き</p></div>
+  <div class="photo-frame"><img src="images/DSC_0086.jpg"><p>くじ引き</p></div>
   <div class="photo-frame"><img src="images/DSC_0087.jpg"><p>歓談</p></div>
   <div class="photo-frame"><img src="images/DSC_0091.jpg"><p>歓談</p></div>
   <div class="photo-frame"><img src="images/DSC_0092.jpg"><p>歓談</p></div>
@@ -172,7 +105,6 @@
   <div class="photo-frame"><img src="images/DSC_0117.jpg"><p>歓談</p></div>
   <div class="photo-frame"><img src="images/DSC_0119.jpg"><p>歓談</p></div>
   <div class="photo-frame"><img src="images/DSC_0122.jpg"><p>歓談</p></div>
-
   <div class="photo-frame"><img src="images/DSC_0129.jpg"><p>くじ引き</p></div>
   <div class="photo-frame"><img src="images/DSC_0131.jpg"><p>くじ引き</p></div>
   <div class="photo-frame"><img src="images/DSC_0132.jpg"><p>くじ引き</p></div>
@@ -222,7 +154,9 @@
   <div class="photo-frame"><img src="images/DSC_0306.jpg"><p>くじ引き</p></div>
   <div class="photo-frame"><img src="images/DSC_0312.jpg"><p>くじ引き</p></div>
   <div class="photo-frame"><img src="images/DSC_0314.jpg"><p>くじ引き</p></div>
-
+  <div class="photo-frame"><img src="images/DSC_0326.jpg"><p>挨拶</p></div>
+  <div class="photo-frame"><img src="images/DSC_0331.jpg"><p>挨拶</p></div>
+  <div class="photo-frame"><img src="images/DSC_0334.jpg"><p>挨拶</p></div>
   <div class="photo-frame"><img src="images/DSC_0341.jpg"><p>集合写真</p></div>
   <div class="photo-frame"><img src="images/DSC_0342.jpg"><p>集合写真</p></div>
   <div class="photo-frame"><img src="images/DSC_0343.jpg"><p>集合写真</p></div>
@@ -248,7 +182,6 @@
     caption: f.querySelector('p').innerText
   }));
   let currentIndex = 0;
-
   frames.forEach((frame, index) => {
     frame.addEventListener('click', () => {
       currentIndex = index;
@@ -256,12 +189,10 @@
       overlay.style.display = 'flex';
     });
   });
-
   function updateOverlay() {
     overlayImg.src = items[currentIndex].src;
     overlayCaption.innerText = items[currentIndex].caption;
   }
-
   document.getElementById('close-btn').addEventListener('click', () => overlay.style.display = 'none');
   document.getElementById('next-btn').addEventListener('click', (e) => {
     e.stopPropagation();
