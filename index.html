@@ -10,48 +10,94 @@
       background-color: #83AD46;
       font-family: "Hiragino Maru Gothic ProN", "Rounded Mplus 1c", sans-serif;
       margin: 0;
-      padding: 20px 10px;
+      padding: 20px 5px; /* スマホ用に横の余白を少し詰めました */
       text-align: center;
     }
     .title-container { margin-bottom: 30px; padding: 0 10px; }
     .title-logo { max-width: 100%; width: 750px; height: auto; }
-    #gallery { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; max-width: 1300px; margin: 0 auto; }
+
+    /* 写真一覧の並び */
+    #gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px; /* 写真同士の隙間を少し狭く */
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+
     .photo-frame {
       background: white;
-      padding: 10px 10px 35px 10px;
+      padding: 8px 8px 30px 8px; /* 余白を少しスリムに */
       box-shadow: 3px 5px 12px rgba(0,0,0,0.2);
       cursor: pointer;
       transition: transform 0.2s;
       position: relative;
     }
+
+    /* 文字の設定 */
     .photo-frame p {
-      margin: 0; font-size: 0.85rem; color: #333; font-weight: bold;
-      position: absolute; bottom: 10px; left: 0; right: 0; text-align: center;
+      margin: 0; font-size: 0.75rem; color: #333; font-weight: bold;
+      position: absolute; bottom: 8px; left: 0; right: 0; text-align: center;
     }
-    .photo-frame img { width: 180px; height: 140px; object-fit: cover; display: block; }
+
+    /* 写真のサイズ設定 */
+    .photo-frame img {
+      width: 180px; /* パソコンでの基本サイズ */
+      height: 140px;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* ★スマホで1列2枚にする設定★ */
+    @media (max-width: 600px) {
+      #gallery {
+        gap: 10px; /* スマホでは隙間を10pxに */
+      }
+      .photo-frame {
+        /* 画面の横幅から隙間分を引いて2分割にする計算 */
+        width: calc(50% - 20px); 
+        padding: 5px 5px 25px 5px;
+        box-sizing: border-box;
+      }
+      .photo-frame img {
+        width: 100%; /* フレームいっぱいに広げる */
+        height: auto;
+        aspect-ratio: 4 / 3; /* 写真の比率を維持 */
+      }
+      .photo-frame p {
+        font-size: 0.7rem; /* スマホでは文字を少し小さく */
+        bottom: 5px;
+      }
+    }
+
+    /* 拡大画面 */
     #overlay {
       display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
       background: rgba(0,0,0,0.92); justify-content: center; align-items: center;
       flex-direction: column; z-index: 9999;
     }
     #overlay-container { background: white; padding: 10px 10px 50px 10px; position: relative; }
-    #overlay img { max-width: 85vw; max-height: 70vh; display: block; }
+    #overlay img { max-width: 90vw; max-height: 75vh; display: block; }
     #overlay-caption { margin-top: 15px; font-size: 1.2rem; color: #333; font-weight: bold; }
+    
     .nav-btn {
       position: absolute; top: 50%; transform: translateY(-50%); color: white;
-      background: rgba(255,255,255,0.2); border: 1px solid white; font-size: 30px;
-      width: 50px; height: 50px; cursor: pointer; border-radius: 50%;
+      background: rgba(255,255,255,0.2); border: 1px solid white; font-size: 24px;
+      width: 44px; height: 44px; cursor: pointer; border-radius: 50%;
     }
-    #prev-btn { left: -70px; }
-    #next-btn { right: -70px; }
+    #prev-btn { left: -60px; }
+    #next-btn { right: -60px; }
     #close-btn { position: absolute; top: -50px; right: 0; background: white; border: none; padding: 5px 15px; cursor: pointer; border-radius: 20px; }
+
     @media (max-width: 768px) {
       #prev-btn { left: 10px; top: auto; bottom: -60px; }
       #next-btn { right: 10px; top: auto; bottom: -60px; }
     }
-    .photo-frame:nth-child(odd) { transform: rotate(-2deg); }
-    .photo-frame:nth-child(even) { transform: rotate(2deg); }
-    .photo-frame:hover { transform: scale(1.1) rotate(0deg) !important; z-index: 10; }
+
+    .photo-frame:nth-child(odd) { transform: rotate(-1.5deg); }
+    .photo-frame:nth-child(even) { transform: rotate(1.5deg); }
+    .photo-frame:hover { transform: scale(1.05) rotate(0deg) !important; z-index: 10; }
   </style>
 </head>
 <body>
