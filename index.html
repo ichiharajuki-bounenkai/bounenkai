@@ -2,21 +2,55 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex, nofollow">
   <title>忘年会アルバム</title>
   <style>
     body {
-      font-family: sans-serif;
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      background-color: #f8f9fa;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
     }
+    h1 { color: #333; margin-bottom: 30px; }
+
+    /* ギャラリーのレイアウト */
     #gallery {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* 自動で並べる */
+      gap: 10px;
+      max-width: 1000px;
+      margin: 0 auto;
     }
+
     #gallery img {
-      width: 200px;
-      height: auto;
+      width: 100%;
+      height: 150px;
+      object-fit: cover; /* 写真を枠いっぱいにトリミングして揃える */
+      border-radius: 4px;
       cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    #gallery img:hover {
+      transform: scale(1.05); /* ホバーで少し大きく */
+    }
+
+    /* 拡大画面（ライトボックス）のスタイル */
+    #overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.8);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+    #overlay img {
+      max-width: 90%;
+      max-height: 90%;
+      border: 3px solid white;
     }
   </style>
 </head>
@@ -26,113 +60,33 @@
 
 <div id="gallery">
   <img src="images/DSC_0046.jpg">
-<img src="images/DSC_0045.jpg">
-<img src="images/DSC_0043.jpg">
-<img src="images/DSC_0042.jpg">
-<img src="images/DSC_0039.jpg">
-<img src="images/DSC_0038.jpg">
-<img src="images/DSC_0037.jpg">
-<img src="images/DSC_0036.jpg">
-<img src="images/DSC_0035.jpg">
-<img src="images/DSC_0025.jpg">
-<img src="images/DSC_0023.jpg">
-<img src="images/DSC_0022.jpg">
-<img src="images/DSC_0020.jpg">
-<img src="images/DSC_0019.jpg">
-<img src="images/DSC_0018.jpg">
-<img src="images/DSC_0016.jpg">
-<img src="images/DSC_0343.jpg">
-<img src="images/DSC_0342.jpg">
-<img src="images/DSC_0341.jpg">
-<img src="images/DSC_0334.jpg">
-<img src="images/DSC_0331.jpg">
-<img src="images/DSC_0326.jpg">
-<img src="images/DSC_0314.jpg">
-<img src="images/DSC_0312.jpg">
-<img src="images/DSC_0306.jpg">
-<img src="images/DSC_0300.jpg">
-<img src="images/DSC_0290.jpg">
-<img src="images/DSC_0289.jpg">
-<img src="images/DSC_0287.jpg">
-<img src="images/DSC_0282.jpg">
-<img src="images/DSC_0280.jpg">
-<img src="images/DSC_0279.jpg">
-<img src="images/DSC_0277.jpg">
-<img src="images/DSC_0268.jpg">
-<img src="images/DSC_0264.jpg">
-<img src="images/DSC_0257.jpg">
-<img src="images/DSC_0251.jpg">
-<img src="images/DSC_0244.jpg">
-<img src="images/DSC_0243.jpg">
-<img src="images/DSC_0240.jpg">
-<img src="images/DSC_0238.jpg">
-<img src="images/DSC_0234.jpg">
-<img src="images/DSC_0232.jpg">
-<img src="images/DSC_0222.jpg">
-<img src="images/DSC_0219.jpg">
-<img src="images/DSC_0215.jpg">
-<img src="images/DSC_0214.jpg">
-<img src="images/DSC_0213.jpg">
-<img src="images/DSC_0202.jpg">
-<img src="images/DSC_0198.jpg">
-<img src="images/DSC_0192.jpg">
-<img src="images/DSC_0191.jpg">
-<img src="images/DSC_0189.jpg">
-<img src="images/DSC_0188.jpg">
-<img src="images/DSC_0187.jpg">
-<img src="images/DSC_0186.jpg">
-<img src="images/DSC_0179.jpg">
-<img src="images/DSC_0178.jpg">
-<img src="images/DSC_0177.jpg">
-<img src="images/DSC_0170.jpg">
-<img src="images/DSC_0169.jpg">
-<img src="images/DSC_0163.jpg">
-<img src="images/DSC_0162.jpg">
-<img src="images/DSC_0160.jpg">
-<img src="images/DSC_0153.jpg">
-<img src="images/DSC_0151.jpg">
-<img src="images/DSC_0145.jpg">
-<img src="images/DSC_0133.jpg">
-<img src="images/DSC_0132.jpg">
-<img src="images/DSC_0131.jpg">
-<img src="images/DSC_0129.jpg">
-<img src="images/DSC_0122.jpg">
-<img src="images/DSC_0119.jpg">
-<img src="images/DSC_0117.jpg">
-<img src="images/DSC_0113.jpg">
-<img src="images/DSC_0111.jpg">
-<img src="images/DSC_0109.jpg">
-<img src="images/DSC_0103.jpg">
-<img src="images/DSC_0100.jpg">
-<img src="images/DSC_0096.jpg">
-<img src="images/DSC_0093.jpg">
-<img src="images/DSC_0092.jpg">
-<img src="images/DSC_0091.jpg">
-<img src="images/DSC_0087.jpg">
-<img src="images/DSC_0086.jpg">
-<img src="images/DSC_0085.jpg">
-<img src="images/DSC_0081.jpg">
-<img src="images/DSC_0080.jpg">
-<img src="images/DSC_0078.jpg">
-<img src="images/DSC_0073.jpg">
-<img src="images/DSC_0066.jpg">
-<img src="images/DSC_0060.jpg">
-<img src="images/DSC_0059.jpg">
-<img src="images/DSC_0057.jpg">
-<img src="images/DSC_0054.jpg">
-<img src="images/DSC_0053.jpg">
-<img src="images/DSC_0052.jpg">
-<img src="images/DSC_0051.jpg">
-<img src="images/DSC_0047.jpg">
+  <img src="images/DSC_0045.jpg">
+  <img src="images/DSC_0047.jpg">
+</div>
+
+<div id="overlay" onclick="this.style.display='none'">
+  <img id="overlay-img" src="">
 </div>
 
 <script>
   const gallery = document.getElementById("gallery");
-  const images = Array.from(gallery.children);
+  const images = Array.from(gallery.getElementsByTagName("img"));
 
+  // シャッフル機能（そのまま維持）
   images
     .sort(() => Math.random() - 0.5)
     .forEach(img => gallery.appendChild(img));
+
+  // クリックで拡大する機能
+  const overlay = document.getElementById("overlay");
+  const overlayImg = document.getElementById("overlay-img");
+
+  gallery.addEventListener("click", (e) => {
+    if (e.target.tagName === "IMG") {
+      overlayImg.src = e.target.src;
+      overlay.style.display = "flex";
+    }
+  });
 </script>
 
 </body>
