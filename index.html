@@ -4,6 +4,48 @@
   <meta charset="UTF-8">
   <meta name="robots" content="noindex, nofollow">
   <title>忘年会アルバム</title>
+  <style>
+    body {
+      font-family: sans-serif;
+    }
+    #gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    #gallery img {
+      width: 200px;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+
+<h1>忘年会アルバム</h1>
+
+<div id="gallery">
+  <img src="images/IMG_0001.JPG">
+  <img src="images/IMG_0002.JPG">
+  <img src="images/IMG_0003.JPG">
+</div>
+
+<script>
+  const gallery = document.getElementById("gallery");
+  const images = Array.from(gallery.children);
+
+  images
+    .sort(() => Math.random() - 0.5)
+    .forEach(img => gallery.appendChild(img));
+</script>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="robots" content="noindex, nofollow">
+  <title>忘年会アルバム</title>
 </head>
 <body>
   <h1>忘年会アルバム</h1>
