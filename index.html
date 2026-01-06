@@ -7,7 +7,7 @@
   <title>株式会社市原重機建設 2025年 忘年会</title>
   <style>
     body {
-      background-color: #83AD46; /* 指定の背景色 */
+      background-color: #83AD46; /* 背景色を変更 */
       font-family: "Hiragino Maru Gothic ProN", "Rounded Mplus 1c", sans-serif;
       margin: 0;
       padding: 20px 10px;
@@ -21,7 +21,7 @@
     }
     .title-logo {
       max-width: 100%;
-      width: 700px; /* お好みの大きさに調整してください */
+      width: 750px; /* タイトル画像の表示サイズ */
       height: auto;
     }
 
@@ -36,7 +36,7 @@
 
     .photo-frame {
       background: white;
-      padding: 10px 10px 35px 10px; /* 文字が入るので下を広めに */
+      padding: 10px 10px 35px 10px;
       box-shadow: 3px 5px 12px rgba(0,0,0,0.2);
       cursor: pointer;
       transition: transform 0.2s;
@@ -44,13 +44,14 @@
     }
 
     .photo-frame p {
-      margin: 8px 0 0 0;
+      margin: 0;
       font-size: 0.85rem;
       color: #333;
       font-weight: bold;
       position: absolute;
       bottom: 10px;
-      width: calc(100% - 20px);
+      left: 0;
+      right: 0;
       text-align: center;
     }
 
@@ -109,13 +110,12 @@
     #next-btn { right: -70px; }
     #close-btn { position: absolute; top: -50px; right: 0; background: white; border: none; padding: 5px 15px; cursor: pointer; border-radius: 20px; }
 
-    /* モバイル対応の矢印位置調整 */
+    /* モバイル対応 */
     @media (max-width: 768px) {
       #prev-btn { left: 10px; top: auto; bottom: -60px; }
       #next-btn { right: 10px; top: auto; bottom: -60px; }
     }
 
-    /* 手作り感：交互に傾ける */
     .photo-frame:nth-child(odd) { transform: rotate(-2deg); }
     .photo-frame:nth-child(even) { transform: rotate(2deg); }
     .photo-frame:hover { transform: scale(1.1) rotate(0deg) !important; z-index: 10; }
@@ -124,7 +124,7 @@
 <body>
 
 <div class="title-container">
-  <img src="img/ichiharajuki.jpg" alt="株式会社市原重機 2025年 忘年会" class="title-logo">
+  <img src="images/ichiharajuki.jpg" alt="株式会社市原重機 2025年 忘年会" class="title-logo">
 </div>
 
 <div id="gallery">
@@ -150,133 +150,3 @@
   <div class="photo-frame"><img src="images/DSC_0046.jpg"><p>歓談</p></div>
   <div class="photo-frame"><img src="images/DSC_0047.jpg"><p>歓談</p></div>
   <div class="photo-frame"><img src="images/DSC_0051.jpg"><p>歓談</p></div>
-  <div class="photo-frame"><img src="images/DSC_0052.jpg"><p>歓談</p></div>
-  <div class="photo-frame"><img src="images/DSC_0053.jpg"><p>歓談</p></div>
-  <div class="photo-frame"><img src="images/DSC_0054.jpg"><p>歓談</p></div>
-  <div class="photo-frame"><img src="images/DSC_0057.jpg"><p>歓談</p></div>
-  <div class="photo-frame"><img src="images/DSC_0059.jpg"><p>歓談</p></div>
-  <div class="photo-frame"><img src="images/DSC_0060.jpg"><p>歓談</p></div>
-  <div class="photo-frame"><img src="images/DSC_0066.jpg"><p>歓談</p></div>
-  <div class="photo-frame"><img src="images/DSC_0073.jpg"><p>歓談</p></div>
-  <div class="photo-frame"><img src="images/DSC_0078.jpg"><p>歓談</p></div>
-  <div class="photo-frame"><img src="images/DSC_0080.jpg"><p>歓談</p></div>
-  <div class="photo-frame"><img src="images/DSC_0081.jpg"><p>歓談</p></div>
-  <div class="photo-frame"><img src="images/DSC_0087.jpg"><p>歓談</p></div>
-  <div class="photo-frame"><img src="images/DSC_0091.jpg"><p>歓談</p></div>
-  <div class="photo-frame"><img src="images/DSC_0092.jpg"><p>歓談</p></div>
-  <div class="photo-frame"><img src="images/DSC_0093.jpg"><p>歓談</p></div>
-  <div class="photo-frame"><img src="images/DSC_0096.jpg"><p>歓談</p></div>
-  <div class="photo-frame"><img src="images/DSC_0100.jpg"><p>歓談</p></div>
-  <div class="photo-frame"><img src="images/DSC_0103.jpg"><p>歓談</p></div>
-  <div class="photo-frame"><img src="images/DSC_0109.jpg"><p>歓談</p></div>
-  <div class="photo-frame"><img src="images/DSC_0111.jpg"><p>歓談</p></div>
-  <div class="photo-frame"><img src="images/DSC_0113.jpg"><p>歓談</p></div>
-  <div class="photo-frame"><img src="images/DSC_0117.jpg"><p>歓談</p></div>
-  <div class="photo-frame"><img src="images/DSC_0119.jpg"><p>歓談</p></div>
-  <div class="photo-frame"><img src="images/DSC_0122.jpg"><p>歓談</p></div>
-
-  <div class="photo-frame"><img src="images/DSC_0129.jpg"><p>くじ引き</p></div>
-  <div class="photo-frame"><img src="images/DSC_0131.jpg"><p>くじ引き</p></div>
-  <div class="photo-frame"><img src="images/DSC_0132.jpg"><p>くじ引き</p></div>
-  <div class="photo-frame"><img src="images/DSC_0133.jpg"><p>くじ引き</p></div>
-  <div class="photo-frame"><img src="images/DSC_0145.jpg"><p>くじ引き</p></div>
-  <div class="photo-frame"><img src="images/DSC_0151.jpg"><p>くじ引き</p></div>
-  <div class="photo-frame"><img src="images/DSC_0153.jpg"><p>くじ引き</p></div>
-  <div class="photo-frame"><img src="images/DSC_0160.jpg"><p>くじ引き</p></div>
-  <div class="photo-frame"><img src="images/DSC_0162.jpg"><p>くじ引き</p></div>
-  <div class="photo-frame"><img src="images/DSC_0163.jpg"><p>くじ引き</p></div>
-  <div class="photo-frame"><img src="images/DSC_0169.jpg"><p>くじ引き</p></div>
-  <div class="photo-frame"><img src="images/DSC_0170.jpg"><p>くじ引き</p></div>
-  <div class="photo-frame"><img src="images/DSC_0177.jpg"><p>くじ引き</p></div>
-  <div class="photo-frame"><img src="images/DSC_0178.jpg"><p>くじ引き</p></div>
-  <div class="photo-frame"><img src="images/DSC_0179.jpg"><p>くじ引き</p></div>
-  <div class="photo-frame"><img src="images/DSC_0186.jpg"><p>くじ引き</p></div>
-  <div class="photo-frame"><img src="images/DSC_0187.jpg"><p>くじ引き</p></div>
-  <div class="photo-frame"><img src="images/DSC_0188.jpg"><p>くじ引き</p></div>
-  <div class="photo-frame"><img src="images/DSC_0189.jpg"><p>くじ引き</p></div>
-  <div class="photo-frame"><img src="images/DSC_0191.jpg"><p>くじ引き</p></div>
-  <div class="photo-frame"><img src="images/DSC_0192.jpg"><p>くじ引き</p></div>
-  <div class="photo-frame"><img src="images/DSC_0198.jpg"><p>くじ引き</p></div>
-  <div class="photo-frame"><img src="images/DSC_0202.jpg"><p>くじ引き</p></div>
-  <div class="photo-frame"><img src="images/DSC_0213.jpg"><p>くじ引き</p></div>
-  <div class="photo-frame"><img src="images/DSC_0214.jpg"><p>くじ引き</p></div>
-  <div class="photo-frame"><img src="images/DSC_0215.jpg"><p>くじ引き</p></div>
-  <div class="photo-frame"><img src="images/DSC_0219.jpg"><p>くじ引き</p></div>
-  <div class="photo-frame"><img src="images/DSC_0222.jpg"><p>くじ引き</p></div>
-  <div class="photo-frame"><img src="images/DSC_0232.jpg"><p>くじ引き</p></div>
-  <div class="photo-frame"><img src="images/DSC_0234.jpg"><p>くじ引き</p></div>
-  <div class="photo-frame"><img src="images/DSC_0238.jpg"><p>くじ引き</p></div>
-  <div class="photo-frame"><img src="images/DSC_0240.jpg"><p>くじ引き</p></div>
-  <div class="photo-frame"><img src="images/DSC_0243.jpg"><p>くじ引き</p></div>
-  <div class="photo-frame"><img src="images/DSC_0244.jpg"><p>くじ引き</p></div>
-  <div class="photo-frame"><img src="images/DSC_0251.jpg"><p>くじ引き</p></div>
-  <div class="photo-frame"><img src="images/DSC_0257.jpg"><p>くじ引き</p></div>
-  <div class="photo-frame"><img src="images/DSC_0264.jpg"><p>くじ引き</p></div>
-  <div class="photo-frame"><img src="images/DSC_0268.jpg"><p>くじ引き</p></div>
-  <div class="photo-frame"><img src="images/DSC_0277.jpg"><p>くじ引き</p></div>
-  <div class="photo-frame"><img src="images/DSC_0279.jpg"><p>くじ引き</p></div>
-  <div class="photo-frame"><img src="images/DSC_0280.jpg"><p>くじ引き</p></div>
-  <div class="photo-frame"><img src="images/DSC_0282.jpg"><p>くじ引き</p></div>
-  <div class="photo-frame"><img src="images/DSC_0287.jpg"><p>くじ引き</p></div>
-  <div class="photo-frame"><img src="images/DSC_0289.jpg"><p>くじ引き</p></div>
-  <div class="photo-frame"><img src="images/DSC_0290.jpg"><p>くじ引き</p></div>
-  <div class="photo-frame"><img src="images/DSC_0300.jpg"><p>くじ引き</p></div>
-  <div class="photo-frame"><img src="images/DSC_0306.jpg"><p>くじ引き</p></div>
-  <div class="photo-frame"><img src="images/DSC_0312.jpg"><p>くじ引き</p></div>
-  <div class="photo-frame"><img src="images/DSC_0314.jpg"><p>くじ引き</p></div>
-
-  <div class="photo-frame"><img src="images/DSC_0341.jpg"><p>集合写真</p></div>
-  <div class="photo-frame"><img src="images/DSC_0342.jpg"><p>集合写真</p></div>
-  <div class="photo-frame"><img src="images/DSC_0343.jpg"><p>集合写真</p></div>
-</div>
-
-<div id="overlay">
-  <div id="overlay-container">
-    <button id="close-btn">× 閉じる</button>
-    <button id="prev-btn" class="nav-btn">◀</button>
-    <img id="overlay-img" src="">
-    <div id="overlay-caption"></div>
-    <button id="next-btn" class="nav-btn">▶</button>
-  </div>
-</div>
-
-<script>
-  const frames = document.querySelectorAll('.photo-frame');
-  const overlay = document.getElementById('overlay');
-  const overlayImg = document.getElementById('overlay-img');
-  const overlayCaption = document.getElementById('overlay-caption');
-  const items = Array.from(frames).map(f => ({
-    src: f.querySelector('img').src,
-    caption: f.querySelector('p').innerText
-  }));
-  let currentIndex = 0;
-
-  frames.forEach((frame, index) => {
-    frame.addEventListener('click', () => {
-      currentIndex = index;
-      updateOverlay();
-      overlay.style.display = 'flex';
-    });
-  });
-
-  function updateOverlay() {
-    overlayImg.src = items[currentIndex].src;
-    overlayCaption.innerText = items[currentIndex].caption;
-  }
-
-  document.getElementById('close-btn').addEventListener('click', () => overlay.style.display = 'none');
-  document.getElementById('next-btn').addEventListener('click', (e) => {
-    e.stopPropagation();
-    currentIndex = (currentIndex + 1) % items.length;
-    updateOverlay();
-  });
-  document.getElementById('prev-btn').addEventListener('click', (e) => {
-    e.stopPropagation();
-    currentIndex = (currentIndex - 1 + items.length) % items.length;
-    updateOverlay();
-  });
-  overlay.addEventListener('click', (e) => { if (e.target === overlay) overlay.style.display = 'none'; });
-</script>
-
-</body>
-</html>
